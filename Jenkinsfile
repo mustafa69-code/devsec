@@ -7,7 +7,7 @@ pipeline{
     environment{
 
         scannerHome= tool 'sonar-scanner'
-        API= credentials('api')  
+        //API= credentials('api')  
     }
 
     stages{
@@ -71,7 +71,7 @@ pipeline{
               script{
                 withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
                 
-                   sh "docker build --build-arg TMDB_V3_API_KEY=${API} -t netflix ./Dockerfile" 
+                   sh "docker build --build-arg TMDB_V3_API_KEY=180196a1672216ae6d62be15840e4cde -t netflix ." 
                    sh "docker tag  netflix mustafa6969/netflix:latest"
                    sh "docker push mustafa6969/netflix:latest"
                 }
