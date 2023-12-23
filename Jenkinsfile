@@ -30,8 +30,7 @@ pipeline{
                 withSonarQubeEnv('sonar-server') {    
                 sh '''
                  ${scannerHome}/bin/sonar-scanner \
-                 -Dsonar.projectName=YESNETFLIX -Dsonar.projectKey=YESNETFLIX \
-                 -Dsonar.host.url=http://18.234.227.162:9000 
+                 -Dsonar.projectName=myproject -Dsonar.projectKey=myproject
                  '''
               }
             }    
