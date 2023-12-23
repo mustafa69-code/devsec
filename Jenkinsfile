@@ -30,7 +30,8 @@ pipeline{
                 withSonarQubeEnv('sonar-server') {    
                 sh '''
                  ${scannerHome}/bin/sonar-scanner \
-                 -Dsonar.projectName=myproject -Dsonar.projectKey=myproject
+                 -Dsonar.projectName=myproject -Dsonar.projectKey=myproject \
+                 -Dsonar.host.url=http://52.91.86.218:9000
                  '''
               }
             }    
